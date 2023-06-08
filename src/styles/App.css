@@ -118,12 +118,12 @@ main {
 
 .leftHome > .emptyBox:first-of-type,
 .rightHome > .emptyBox:first-of-type {
-  width: 2rem;
+  width: var(--homepage-left-text-fs);
 }
 
 .leftHome > .emptyBox:nth-of-type(2),
 .rightHome > .emptyBox:nth-of-type(2) {
-  width: 3rem;
+  width: var(--homepage-left-text-fs-big);
 }
 
 .leftHome > .emptyBox:first-of-type {
@@ -133,8 +133,8 @@ main {
 }
 
 .leftHome > .emptyBox:nth-of-type(2) {
-  left: 2rem;
-  top: 2rem;
+  left: var(--homepage-left-text-fs);
+  top: var(--homepage-left-text-fs);
   background-color: white;
 }
 
@@ -165,8 +165,8 @@ main {
 }
 
 .rightHome > .emptyBox:nth-of-type(2) {
-  right: 2rem;
-  bottom: 2rem;
+  right: var(--homepage-left-text-fs);
+  bottom: var(--homepage-left-text-fs);
 }
 
 @media screen and (min-width: 1000px) {
