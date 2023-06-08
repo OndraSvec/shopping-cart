@@ -13,7 +13,6 @@ const HomePage = () => (
       </Link>
     </div>
     <div className="rightHome">
-      <p>placeholder</p>
       <div className="emptyBox"></div>
       <div className="emptyBox"></div>
     </div>
