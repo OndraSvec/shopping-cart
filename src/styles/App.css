@@ -6,6 +6,14 @@
   margin: 0;
 }
 
+:root {
+  --navbar-p: clamp(0.5rem, 5vw, 1rem);
+  --navbar-links-gap: clamp(0.1rem, 5vw, 0.5rem);
+  --navbar-links-fs: clamp(0.5rem, 5vw, 1.5rem);
+  --navbar-logo-fs: calc(var(--navbar-links-fs) * 0.6);
+  --navbar-logo-lspacing: calc(var(--navbar-logo-fs) * 0.17);
+}
+
 html {
   min-height: 100%;
   display: flex;
@@ -15,4 +23,43 @@ html {
 body {
   flex-grow: 1;
   font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.navBar {
+  padding: var(--navbar-p);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.navBar > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--navbar-links-gap);
+}
+
+.navBar a {
+  text-decoration: none;
+  color: inherit;
+  font-size: var(--navbar-links-fs);
+}
+
+.logo {
+  font-size: var(--navbar-logo-fs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.logo > p {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: var(--navbar-logo-lspacing);
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--navbar-links-fs);
 }
