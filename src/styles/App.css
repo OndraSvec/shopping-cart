@@ -155,9 +155,6 @@ main {
   text-decoration: none;
 }
 
-.rightHome {
-}
-
 .rightHome > .emptyBox {
   background-color: var(--color-theme-main);
 }
