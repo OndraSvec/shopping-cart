@@ -64,6 +64,10 @@ body {
   font-size: var(--navbar-links-fs);
 }
 
+main {
+  padding: var(--navbar-p);
+}
+
 @media screen and (min-width: 1000px) {
   .navBar > ul {
     flex-direction: row;
