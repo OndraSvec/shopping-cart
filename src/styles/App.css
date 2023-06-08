@@ -80,7 +80,8 @@ body {
 }
 
 main {
-  padding: var(--navbar-p);
+  padding-inline: var(--navbar-p);
+  padding-bottom: var(--navbar-p);
   flex-grow: 1;
   min-height: 100%;
   display: flex;
