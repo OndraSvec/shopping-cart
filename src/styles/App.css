@@ -36,7 +36,7 @@ body {
 .navBar > ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--navbar-links-gap);
 }
 
@@ -62,4 +62,10 @@ body {
   display: flex;
   justify-content: flex-end;
   font-size: var(--navbar-links-fs);
+}
+
+@media screen and (min-width: 1000px) {
+  .navBar > ul {
+    flex-direction: row;
+  }
 }
