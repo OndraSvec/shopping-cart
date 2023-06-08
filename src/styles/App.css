@@ -102,12 +102,12 @@ main {
   flex-direction: column;
   justify-content: center;
   gap: var(--homepage-left-text-gap);
-  padding: calc(var(--navbar-p) * 6);
   padding-right: 0;
   position: relative;
 }
 
 .leftHome {
+  padding: calc(var(--navbar-p) * 5);
   background-color: var(--color-theme-main);
   font-size: var(--homepage-left-text-fs);
 }
@@ -154,6 +154,26 @@ main {
   background-color: black;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.rightHome {
+  padding: calc(var(--navbar-p) * 2);
+}
+
+.homePage-model {
+  border: calc(var(--navbar-p) * 0.35) solid var(--color-theme-main);
+  padding: calc(var(--navbar-p) * 0.2);
+  width: 100%;
+  height: auto;
+}
+
+.homePage-model.displayed {
+  display: block;
+}
+
+.homePage-model.notDisplayed {
+  display: none;
 }
 
 .rightHome > .emptyBox {
