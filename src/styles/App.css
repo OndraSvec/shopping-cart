@@ -11,7 +11,7 @@
   --navbar-links-gap: clamp(0.1rem, 5vw, 0.5rem);
   --navbar-links-fs: clamp(0.5rem, 5vw, 1.5rem);
   --navbar-logo-fs: calc(var(--navbar-links-fs) * 0.6);
-  --navbar-logo-lspacing: calc(var(--navbar-logo-fs) * 0.17);
+  --navbar-logo-ls: calc(var(--navbar-logo-fs) * 0.17);
   --homepage-left-text-gap: clamp(0.75rem, 10vw, 7rem);
   --homepage-left-text-fs: clamp(0.75rem, 5vw, 2rem);
   --homepage-left-text-fs-big: clamp(1rem, 7vw, 3rem);
@@ -70,7 +70,7 @@ body {
 
 .logo > p {
   font-family: "Bebas Neue", sans-serif;
-  letter-spacing: var(--navbar-logo-lspacing);
+  letter-spacing: var(--navbar-logo-ls);
 }
 
 .cart {
