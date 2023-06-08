@@ -12,6 +12,10 @@
   --navbar-links-fs: clamp(0.5rem, 5vw, 1.5rem);
   --navbar-logo-fs: calc(var(--navbar-links-fs) * 0.6);
   --navbar-logo-lspacing: calc(var(--navbar-logo-fs) * 0.17);
+  --homepage-left-text-gap: clamp(0.75rem, 10vw, 7rem);
+  --homepage-left-text-fs: clamp(0.75rem, 5vw, 2rem);
+  --homepage-left-text-fs-big: clamp(1rem, 7vw, 3rem);
+  --color-theme-main: #ffe4e6;
 }
 
 html {
@@ -22,8 +26,19 @@ html {
 
 body {
   flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
+  background-color: white;
   color: black;
+}
+
+#root {
+  flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .navBar {
@@ -66,10 +81,105 @@ body {
 
 main {
   padding: var(--navbar-p);
+  flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homePage {
+  flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftHome,
+.rightHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--homepage-left-text-gap);
+  padding: calc(var(--navbar-p) * 6);
+  padding-right: 0;
+  position: relative;
+}
+
+.leftHome {
+  background-color: var(--color-theme-main);
+  font-size: var(--homepage-left-text-fs);
+}
+
+.emptyBox {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+}
+
+.leftHome > .emptyBox:first-of-type,
+.rightHome > .emptyBox:first-of-type {
+  width: 2rem;
+}
+
+.leftHome > .emptyBox:nth-of-type(2),
+.rightHome > .emptyBox:nth-of-type(2) {
+  width: 3rem;
+}
+
+.leftHome > .emptyBox:first-of-type {
+  left: 0;
+  top: 0;
+  background-color: white;
+}
+
+.leftHome > .emptyBox:nth-of-type(2) {
+  left: 2rem;
+  top: 2rem;
+  background-color: white;
+}
+
+.leftHome > p:nth-of-type(2) {
+  font-size: var(--homepage-left-text-fs-big);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: calc(var(--homepage-left-text-fs-big) * 0.2);
+}
+
+.leftHome > a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--homepage-left-text-fs) * 0.2);
+  width: fit-content;
+  padding: var(--navbar-p);
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.rightHome {
+}
+
+.rightHome > .emptyBox {
+  background-color: var(--color-theme-main);
+}
+
+.rightHome > .emptyBox:first-of-type {
+  right: 0;
+  bottom: 0;
+}
+
+.rightHome > .emptyBox:nth-of-type(2) {
+  right: 2rem;
+  bottom: 2rem;
 }
 
 @media screen and (min-width: 1000px) {
   .navBar > ul {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .homePage {
     flex-direction: row;
   }
 }
