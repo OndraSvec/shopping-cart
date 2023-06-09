@@ -7,14 +7,20 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./components/HomePage";
-import ProductPage from "./components/ProductPage";
+import ProductPage, {
+  loader as productPageLoader,
+} from "./components/ProductPage";
 import CartPage from "./components/CartPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<HomePage />} />
-      <Route path="products" element={<ProductPage />} />
+      <Route
+        path="products"
+        element={<ProductPage />}
+        loader={productPageLoader}
+      />
       <Route path="cart" element={<CartPage />} />
     </Route>
   )
