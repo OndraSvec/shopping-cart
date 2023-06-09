@@ -18,14 +18,7 @@ const HomePage = () => {
         </Link>
       </div>
       <div className="rightHome">
-        <img
-          src={modelSmall}
-          className={`${
-            imgLoaded
-              ? "homePage-model notDisplayed"
-              : "homePage-model displayed"
-          }`}
-        />
+        {!imgLoaded && <img src={modelSmall} className="homePage-model" />}
         <img
           onLoad={() => setImgLoaded(true)}
           className={`${
