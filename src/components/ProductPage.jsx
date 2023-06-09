@@ -11,13 +11,15 @@ const ProductPage = () => {
   const products = useLoaderData();
   console.log(products);
 
-  const productElements = products.map((item) => (
-    <Card key={item.id}>
-      <img src={item.images[0]} alt={item.title} />
-      <p>Brand: {item.brand}</p>
-      <p>Price: ${item.price}</p>
-    </Card>
-  ));
+  const productElements = products
+    .sort((a, b) => b.rating - a.rating)
+    .map((item) => (
+      <Card key={item.id}>
+        <p>Brand: {item.brand}</p>
+        <p>Price: ${item.price}</p>
+        <img src={item.images[0]} alt={item.title} />
+      </Card>
+    ));
 
   return <>{productElements}</>;
 };

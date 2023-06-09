@@ -16,6 +16,8 @@
   --homepage-left-text-fs: clamp(0.75rem, 5vw, 2rem);
   --homepage-left-text-fs-big: clamp(1rem, 7vw, 3rem);
   --color-theme-main: #ffe4e6;
+  --card-width: clamp(15rem, 80vw, 25rem);
+  --card-height: clamp(20rem, 80vw, 30rem);
 }
 
 html {
@@ -188,6 +190,27 @@ main {
 .rightHome > .emptyBox:nth-of-type(2) {
   right: var(--homepage-left-text-fs);
   bottom: var(--homepage-left-text-fs);
+}
+
+.card {
+  border-radius: 0.5rem;
+  width: var(--card-width);
+  height: var(--card-height);
+  overflow: hidden;
+}
+
+.card > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card > p {
+  background-color: black;
+  font-weight: 600;
+  color: white;
+  padding: calc(var(--navbar-p) * 0.75);
 }
 
 @media screen and (min-width: 1000px) {

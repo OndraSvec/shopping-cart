@@ -5,7 +5,6 @@ export default async function fetchProducts() {
     return data.products.filter(
       (item) =>
         item.id === 36 ||
-        item.id === 37 ||
         item.id === 38 ||
         item.id === 39 ||
         item.id === 39 ||
