@@ -25,7 +25,7 @@ const ProductPage = () => {
           <p>Price: ${item.price}</p>
         </div>
         <div className="item-image">
-          <img src={item.images[0]} alt={item.title} />
+          <img src={item.images[0]} alt={item.title} loading="lazy" />
         </div>
         <div className="item-actions">
           <Link to={`/products/${item.id}`}>
