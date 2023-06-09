@@ -18,3 +18,13 @@ export default async function fetchProducts() {
     return error;
   }
 }
+
+export async function fetchProduct(id) {
+  try {
+    const response = await fetch(`https://dummyjson.com/products/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+}

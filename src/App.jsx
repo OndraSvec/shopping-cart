@@ -10,6 +10,9 @@ import HomePage from "./components/HomePage";
 import ProductPage, {
   loader as productPageLoader,
 } from "./components/ProductPage";
+import ProductDetail, {
+  loader as productDetailLoader,
+} from "./components/ProductDetail";
 import CartPage from "./components/CartPage";
 
 const router = createBrowserRouter(
@@ -20,6 +23,11 @@ const router = createBrowserRouter(
         path="products"
         element={<ProductPage />}
         loader={productPageLoader}
+      />
+      <Route
+        path="products/:id"
+        element={<ProductDetail />}
+        loader={productDetailLoader}
       />
       <Route path="cart" element={<CartPage />} />
     </Route>
