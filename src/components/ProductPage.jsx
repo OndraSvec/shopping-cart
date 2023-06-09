@@ -1,7 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import fetchProducts from "../utils/api";
 import Card from "./Card";
+import Carousel from "./Carousel";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
   const data = await fetchProducts();
   return data;
@@ -21,7 +23,7 @@ const ProductPage = () => {
       </Card>
     ));
 
-  return <>{productElements}</>;
+  return <Carousel>{productElements}</Carousel>;
 };
 
 export default ProductPage;

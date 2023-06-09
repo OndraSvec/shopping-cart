@@ -18,6 +18,7 @@
   --color-theme-main: #ffe4e6;
   --card-width: clamp(15rem, 80vw, 25rem);
   --card-height: clamp(20rem, 80vw, 30rem);
+  --carousel-card-gap: clamp(1rem, 5vw, 3rem);
 }
 
 html {
@@ -192,6 +193,16 @@ main {
   bottom: var(--homepage-left-text-fs);
 }
 
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+}
+
+.inner-carousel {
+  display: flex;
+  gap: var(--carousel-card-gap);
+}
+
 .card {
   border-radius: 0.5rem;
   width: var(--card-width);
@@ -204,6 +215,7 @@ main {
   height: auto;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
 }
 
 .card > p {
@@ -213,14 +225,20 @@ main {
   padding: calc(var(--navbar-p) * 0.75);
 }
 
+@media screen and (min-width: 700px) {
+  .homePage {
+    flex-direction: row;
+  }
+  .carousel {
+    width: 90%;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .navBar > ul {
     flex-direction: row;
   }
-}
-
-@media screen and (min-width: 700px) {
-  .homePage {
-    flex-direction: row;
+  .carousel {
+    width: 80%;
   }
 }
