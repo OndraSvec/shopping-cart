@@ -23,7 +23,11 @@ const ProductPage = () => {
       </Card>
     ));
 
-  return <Carousel>{productElements}</Carousel>;
+  return (
+    <div className="productPage">
+      <Carousel>{productElements}</Carousel>
+    </div>
+  );
 };
 
 export default ProductPage;

@@ -98,8 +98,8 @@ main {
   flex-direction: column;
 }
 
-.leftHome,
-.rightHome {
+.leftPage,
+.rightPage {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@ main {
   position: relative;
 }
 
-.leftHome {
+.leftPage {
   padding: calc(var(--navbar-p) * 5);
   background-color: var(--color-theme-main);
   font-size: var(--homepage-left-text-fs);
@@ -120,35 +120,35 @@ main {
   aspect-ratio: 1 / 1;
 }
 
-.leftHome > .emptyBox:first-of-type,
-.rightHome > .emptyBox:first-of-type {
+.leftPage > .emptyBox:first-of-type,
+.rightPage > .emptyBox:first-of-type {
   width: var(--homepage-left-text-fs);
 }
 
-.leftHome > .emptyBox:nth-of-type(2),
-.rightHome > .emptyBox:nth-of-type(2) {
+.leftPage > .emptyBox:nth-of-type(2),
+.rightPage > .emptyBox:nth-of-type(2) {
   width: var(--homepage-left-text-fs-big);
 }
 
-.leftHome > .emptyBox:first-of-type {
+.leftPage > .emptyBox:first-of-type {
   left: 0;
   top: 0;
   background-color: white;
 }
 
-.leftHome > .emptyBox:nth-of-type(2) {
+.leftPage > .emptyBox:nth-of-type(2) {
   left: var(--homepage-left-text-fs);
   top: var(--homepage-left-text-fs);
   background-color: white;
 }
 
-.leftHome > p:nth-of-type(2) {
+.leftPage > p:nth-of-type(2) {
   font-size: var(--homepage-left-text-fs-big);
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: calc(var(--homepage-left-text-fs-big) * 0.2);
 }
 
-.leftHome > a {
+.leftPage > a {
   display: flex;
   align-items: center;
   gap: calc(var(--homepage-left-text-fs) * 0.2);
@@ -160,7 +160,7 @@ main {
   white-space: nowrap;
 }
 
-.rightHome {
+.rightPage {
   padding: calc(var(--navbar-p) * 2);
 }
 
@@ -179,18 +179,25 @@ main {
   display: none;
 }
 
-.rightHome > .emptyBox {
+.rightPage > .emptyBox {
   background-color: var(--color-theme-main);
 }
 
-.rightHome > .emptyBox:first-of-type {
+.rightPage > .emptyBox:first-of-type {
   right: 0;
   bottom: 0;
 }
 
-.rightHome > .emptyBox:nth-of-type(2) {
+.rightPage > .emptyBox:nth-of-type(2) {
   right: var(--homepage-left-text-fs);
   bottom: var(--homepage-left-text-fs);
+}
+
+.productPage {
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
 .carousel {

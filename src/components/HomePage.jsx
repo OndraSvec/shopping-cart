@@ -3,21 +3,21 @@ import { BsArrowUpRight } from "react-icons/bs";
 import model from "../assets/apparel-model.jpg";
 import modelSmall from "../assets/apparel-model-small.jpg";
 import { useState } from "react";
+import LeftPage from "./LeftPage";
+import RightPage from "./RightPage";
 
 const HomePage = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
   return (
     <div className="homePage">
-      <div className="leftHome">
-        <div className="emptyBox"></div>
-        <div className="emptyBox"></div>
+      <LeftPage>
         <p>Just Dropped</p>
         <p>summer surf collection</p>
         <Link to="products">
           shop now <BsArrowUpRight />
         </Link>
-      </div>
-      <div className="rightHome">
+      </LeftPage>
+      <RightPage>
         <img
           src={modelSmall}
           alt="apparel-model-loading"
@@ -37,9 +37,7 @@ const HomePage = () => {
           }`}
           src={model}
         />
-        <div className="emptyBox"></div>
-        <div className="emptyBox"></div>
-      </div>
+      </RightPage>
     </div>
   );
 };
