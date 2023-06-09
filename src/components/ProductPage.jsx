@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
+import { FaCartArrowDown } from "react-icons/fa";
 import fetchProducts from "../utils/api";
 import Card from "./Card";
 import Carousel from "./Carousel";
@@ -19,9 +20,19 @@ const ProductPage = () => {
     .sort((a, b) => b.price - a.price)
     .map((item) => (
       <Card key={item.id}>
-        <p>Brand: {item.brand}</p>
-        <p>Price: ${item.price}</p>
-        <img src={item.images[0]} alt={item.title} />
+        <div className="item-info">
+          <p>Brand: {item.brand}</p>
+          <p>Price: ${item.price}</p>
+        </div>
+        <div className="item-image">
+          <img src={item.images[0]} alt={item.title} />
+        </div>
+        <div className="item-actions">
+          <Link to={`/products/${item.id}`}>Details</Link>
+          <button>
+            <FaCartArrowDown />
+          </button>
+        </div>
       </Card>
     ));
 

@@ -47,6 +47,10 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navBar {
   padding: var(--navbar-p);
   display: grid;
@@ -62,7 +66,6 @@ body {
 }
 
 .navBar a {
-  text-decoration: none;
   color: inherit;
   font-size: var(--navbar-links-fs);
 }
@@ -159,7 +162,6 @@ main {
   padding: var(--navbar-p);
   background-color: black;
   color: white;
-  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -244,25 +246,58 @@ main {
 .card {
   width: var(--card-width);
   height: var(--card-height);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background-color: white;
   box-shadow: 0.25rem 0.25rem 0.25rem 0.1vw rgb(0 0 0 / 0.1);
   overflow: hidden;
 }
 
-.card > img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
+.card > .item-info,
+.card > .item-image {
   pointer-events: none;
 }
 
-.card > p {
-  background-color: black;
-  font-weight: 600;
+.item-info {
+  padding: calc(var(--navbar-logo-fs) * 0.4);
+}
+
+.item-info > p {
+  font-size: var(--navbar-logo-fs);
+}
+
+.item-image {
+  display: grid;
+  place-items: center;
+}
+
+.item-image > img {
+  width: 95%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--navbar-links-gap);
+  padding: calc(var(--navbar-logo-fs) * 0.4);
+}
+
+.item-actions > a,
+.item-actions > button {
+  color: black;
   font-size: var(--navbar-links-fs);
-  color: white;
-  padding: calc(var(--navbar-p) * 0.75);
+  cursor: pointer;
+}
+
+.item-actions > button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: grid;
 }
 
 @media screen and (min-width: 700px) {
