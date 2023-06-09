@@ -1,5 +1,5 @@
 import { useLoaderData, Link } from "react-router-dom";
-import { FaCartArrowDown } from "react-icons/fa";
+import { BsArrowUpRight } from "react-icons/bs";
 import fetchProducts from "../utils/api";
 import Card from "./Card";
 import Carousel from "./Carousel";
@@ -28,10 +28,9 @@ const ProductPage = () => {
           <img src={item.images[0]} alt={item.title} />
         </div>
         <div className="item-actions">
-          <Link to={`/products/${item.id}`}>Details</Link>
-          <button>
-            <FaCartArrowDown />
-          </button>
+          <Link to={`/products/${item.id}`}>
+            Details <BsArrowUpRight />
+          </Link>
         </div>
       </Card>
     ));

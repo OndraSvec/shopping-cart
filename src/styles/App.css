@@ -279,25 +279,21 @@ main {
 }
 
 .item-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--navbar-links-gap);
+  display: grid;
+  place-items: center;
   padding: calc(var(--navbar-logo-fs) * 0.4);
 }
 
-.item-actions > a,
-.item-actions > button {
-  color: black;
+.item-actions > a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--navbar-links-fs) * 0.2);
+  width: fit-content;
+  background-color: black;
+  color: white;
   font-size: var(--navbar-links-fs);
   cursor: pointer;
-}
-
-.item-actions > button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  display: grid;
+  margin-bottom: min(10%, 0.4rem);
 }
 
 @media screen and (min-width: 700px) {
