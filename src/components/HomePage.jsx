@@ -20,6 +20,7 @@ const HomePage = () => {
       <div className="rightHome">
         <img
           src={modelSmall}
+          alt="apparel-model-loading"
           className={`${
             imgLoaded
               ? "homePage-model notDisplayed"
@@ -28,6 +29,7 @@ const HomePage = () => {
         />
         <img
           onLoad={() => setImgLoaded(true)}
+          alt="apparel-model"
           className={`${
             imgLoaded
               ? "homePage-model displayed"
