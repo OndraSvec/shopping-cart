@@ -6,11 +6,17 @@ import PropTypes from "prop-types";
 const Carousel = ({ children }) => {
   const [width, setWidth] = useState();
   const carouselRef = useRef(null);
+
   useEffect(() => {
     setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
   }, []);
+
   return (
-    <motion.div ref={carouselRef} className="carousel">
+    <motion.div
+      ref={carouselRef}
+      whileTap={{ cursor: "grabbing" }}
+      className="carousel"
+    >
       <motion.div
         className="inner-carousel"
         drag="x"

@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import fetchProducts from "../utils/api";
 import Card from "./Card";
 import Carousel from "./Carousel";
+import LeftPage from "./LeftPage";
+import RightPage from "./RightPage";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
@@ -25,6 +27,9 @@ const ProductPage = () => {
 
   return (
     <div className="productPage">
+      <LeftPage />
+      <RightPage />
+      <p>summer surf collection</p>
       <Carousel>{productElements}</Carousel>
     </div>
   );

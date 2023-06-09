@@ -15,7 +15,10 @@
   --homepage-left-text-gap: clamp(0.75rem, 10vw, 7rem);
   --homepage-left-text-fs: clamp(0.75rem, 5vw, 2rem);
   --homepage-left-text-fs-big: clamp(1rem, 7vw, 3rem);
-  --color-theme-main: #ffe4e6;
+  --color-theme-homePage: #ffe4e6;
+  --color-theme-productPage: #fef3c7;
+  --color-theme-cartPage: #d1fae5;
+  --active-link-border-bottom: clamp(0.0625rem, 10vw, 0.375rem);
   --card-width: clamp(15rem, 80vw, 25rem);
   --card-height: clamp(20rem, 80vw, 30rem);
   --carousel-card-gap: clamp(1rem, 5vw, 3rem);
@@ -111,7 +114,7 @@ main {
 
 .leftPage {
   padding: calc(var(--navbar-p) * 5);
-  background-color: var(--color-theme-main);
+  background-color: var(--color-theme-homePage);
   font-size: var(--homepage-left-text-fs);
 }
 
@@ -165,7 +168,7 @@ main {
 }
 
 .homePage-model {
-  border: calc(var(--navbar-p) * 0.35) solid var(--color-theme-main);
+  border: calc(var(--navbar-p) * 0.35) solid var(--color-theme-homePage);
   padding: calc(var(--navbar-p) * 0.2);
   width: 100%;
   height: auto;
@@ -180,7 +183,7 @@ main {
 }
 
 .rightPage > .emptyBox {
-  background-color: var(--color-theme-main);
+  background-color: var(--color-theme-homePage);
 }
 
 .rightPage > .emptyBox:first-of-type {
@@ -196,11 +199,38 @@ main {
 .productPage {
   flex-grow: 1;
   display: grid;
-  place-items: center;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
   overflow: hidden;
+  position: relative;
+}
+
+.productPage > .leftPage,
+.productPage > .rightPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.productPage > .leftPage {
+  background-color: var(--color-theme-productPage);
+}
+.productPage > .rightPage > .emptyBox {
+  background-color: white;
+}
+
+.productPage > p {
+  margin-top: min(5%, 2rem);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: var(--homepage-left-text-fs-big);
+  text-align: center;
+  color: white;
+  white-space: nowrap;
 }
 
 .carousel {
+  width: 95%;
   cursor: grab;
   overflow: hidden;
 }
@@ -208,12 +238,14 @@ main {
 .inner-carousel {
   display: flex;
   gap: var(--carousel-card-gap);
+  padding: var(--navbar-p);
 }
 
 .card {
-  border-radius: 0.5rem;
   width: var(--card-width);
   height: var(--card-height);
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0.1vw rgb(0 0 0 / 0.1);
   overflow: hidden;
 }
 
@@ -228,6 +260,7 @@ main {
 .card > p {
   background-color: black;
   font-weight: 600;
+  font-size: var(--navbar-links-fs);
   color: white;
   padding: calc(var(--navbar-p) * 0.75);
 }
@@ -247,5 +280,8 @@ main {
   }
   .carousel {
     width: 80%;
+  }
+  .productPage > p {
+    letter-spacing: calc(var(--homepage-left-text-fs-big) * 0.2);
   }
 }
