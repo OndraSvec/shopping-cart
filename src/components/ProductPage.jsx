@@ -12,7 +12,7 @@ const ProductPage = () => {
   console.log(products);
 
   const productElements = products
-    .sort((a, b) => b.rating - a.rating)
+    .sort((a, b) => b.price - a.price)
     .map((item) => (
       <Card key={item.id}>
         <p>Brand: {item.brand}</p>
