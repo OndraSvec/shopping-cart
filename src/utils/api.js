@@ -4,18 +4,16 @@ export default async function fetchProducts() {
     const data = await response.json();
     return data.products.filter(
       (item) =>
-        item.category !== "smartphones" &&
-        item.category !== "laptops" &&
-        item.category !== "fragrances" &&
-        item.category !== "skincare" &&
-        item.category !== "groceries" &&
-        item.category !== "home-decoration" &&
-        item.category !== "furniture" &&
-        item.category !== "automotive" &&
-        item.category !== "motorcycle" &&
-        !item.category.includes("jewel") &&
-        !item.category.includes("watch") &&
-        item.category !== "lighting"
+        item.id === 36 ||
+        item.id === 37 ||
+        item.id === 38 ||
+        item.id === 39 ||
+        item.id === 39 ||
+        item.id === 50 ||
+        item.id === 55 ||
+        item.id === 60 ||
+        item.id === 71 ||
+        item.id === 74
     );
   } catch (error) {
     return error;
