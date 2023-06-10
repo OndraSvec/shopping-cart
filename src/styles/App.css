@@ -356,6 +356,19 @@ main {
   transition: 0.3s;
 }
 
+.addToCart-btn {
+  padding: var(--navbar-logo-fs);
+  width: fit-content;
+  font-size: var(--navbar-p);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: calc(var(--navbar-p) * 0.2);
+  background-color: black;
+  color: white;
+  white-space: nowrap;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
 .productDetail > .rightPage:has(img:hover) img:not(:hover) {
   width: 90%;
   opacity: 0.3;

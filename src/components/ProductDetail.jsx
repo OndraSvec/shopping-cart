@@ -30,6 +30,7 @@ const ProductDetail = () => {
           <img src={product.images[1]} alt={product.title} />
           <img src={product.images[2]} alt={product.title} />
         </div>
+        <button className="addToCart-btn">Add to cart</button>
       </RightPage>
     </div>
   );
