@@ -232,6 +232,7 @@ main {
 }
 
 .carousel {
+  height: fit-content;
   width: 95%;
   cursor: grab;
   overflow: hidden;
