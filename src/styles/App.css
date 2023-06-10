@@ -18,6 +18,7 @@
   --color-theme-homePage: #ffe4e6;
   --color-theme-productPage: #fef3c7;
   --color-theme-cartPage: #d1fae5;
+  --star-fill: #fbbf24;
   --active-link-border-bottom: clamp(0.0625rem, 10vw, 0.375rem);
   --card-width: clamp(15rem, 80vw, 25rem);
   --card-height: clamp(20rem, 80vw, 30rem);
@@ -297,8 +298,53 @@ main {
   margin-bottom: min(10%, 0.4rem);
 }
 
+.productDetail {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.productDetail > .leftPage,
+.productDetail > .rightPage > .emptyBox {
+  background-color: var(--color-theme-productPage);
+}
+
+.productDetail > .leftPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--carousel-card-gap);
+}
+
+.productDetail > .leftPage > p:nth-last-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: var(--navbar-links-gap);
+  > svg {
+    fill: var(--star-fill);
+  }
+}
+
+.productDetail > .leftPage > p:last-of-type {
+  text-align: justify;
+}
+
+.productDetail > .rightPage {
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+.productDetail > .rightPage > img {
+  border: calc(var(--navbar-p) * 0.35) solid var(--color-theme-productPage);
+  padding: calc(var(--navbar-p) * 0.2);
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 700px) {
-  .homePage {
+  .homePage,
+  .productDetail {
     flex-direction: row;
   }
   .carousel {
@@ -315,5 +361,8 @@ main {
   }
   .productPage > p {
     letter-spacing: calc(var(--homepage-left-text-fs-big) * 0.2);
+  }
+  .productDetail > .rightPage > img {
+    width: 70%;
   }
 }
