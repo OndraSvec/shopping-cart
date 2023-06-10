@@ -305,7 +305,7 @@ main {
 }
 
 .productDetail > .leftPage,
-.productDetail > .rightPage > .emptyBox {
+.productDetail > .rightPage .emptyBox {
   background-color: var(--color-theme-productPage);
 }
 
@@ -331,15 +331,34 @@ main {
 
 .productDetail > .rightPage {
   background-color: white;
+}
+
+.productDetail > .rightPage .emptyBox:last-of-type {
+  position: absolute;
+  width: var(--homepage-left-text-fs);
+  background-color: var(--color-theme-productPage);
+  bottom: 0;
+  right: 0;
+}
+
+.productDetail > .rightPage > .images {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--navbar-links-gap);
   place-items: center;
 }
 
-.productDetail > .rightPage > img {
-  border: calc(var(--navbar-p) * 0.35) solid var(--color-theme-productPage);
-  padding: calc(var(--navbar-p) * 0.2);
+.productDetail > .rightPage img {
+  object-fit: cover;
+  object-position: center;
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
+  transition: 0.3s;
+}
+
+.productDetail > .rightPage:has(img:hover) img:not(:hover) {
+  width: 90%;
+  opacity: 0.3;
 }
 
 @media screen and (min-width: 700px) {
@@ -361,8 +380,5 @@ main {
   }
   .productPage > p {
     letter-spacing: calc(var(--homepage-left-text-fs-big) * 0.2);
-  }
-  .productDetail > .rightPage > img {
-    width: 70%;
   }
 }

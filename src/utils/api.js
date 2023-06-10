@@ -10,7 +10,6 @@ export default async function fetchProducts() {
         item.id === 39 ||
         item.id === 50 ||
         item.id === 55 ||
-        item.id === 60 ||
         item.id === 71 ||
         item.id === 74
     );

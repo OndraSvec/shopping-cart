@@ -25,7 +25,11 @@ const ProductDetail = () => {
         <p>{product.description}</p>
       </LeftPage>
       <RightPage>
-        <img src={product.images[0]} alt={product.title} />
+        <div className="images">
+          <img src={product.images[0]} alt={product.title} />
+          <img src={product.images[1]} alt={product.title} />
+          <img src={product.images[2]} alt={product.title} />
+        </div>
       </RightPage>
     </div>
   );
