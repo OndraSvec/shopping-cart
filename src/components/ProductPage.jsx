@@ -4,6 +4,7 @@ import Card from "./Card";
 import Carousel from "./Carousel";
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
+import AddToCartBtn from "./AddToCartBtn";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
@@ -28,6 +29,7 @@ const ProductPage = () => {
         </div>
         <div className="item-actions">
           <Link to={`/products/${item.id}`}>Get Details</Link>
+          <AddToCartBtn product={item} />
         </div>
       </Card>
     ));

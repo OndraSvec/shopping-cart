@@ -288,14 +288,20 @@ main {
 
 .item-actions {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   place-items: center;
+  gap: min(1%, 1rem);
   padding: calc(var(--navbar-logo-fs) * 0.4);
 }
 
-.item-actions > a {
+.item-actions > a,
+.item-actions > .addToCart-btn {
+  display: grid;
+  height: max(80%, 2rem);
+  place-items: center;
   padding: calc(var(--navbar-logo-fs) * 0.75);
   width: fit-content;
-  font-size: var(--navbar-p);
+  font-size: calc(var(--navbar-p) * 0.8);
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: calc(var(--navbar-p) * 0.2);
   background-color: black;
