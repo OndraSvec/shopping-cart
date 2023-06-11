@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { RiShoppingCartFill } from "react-icons/ri";
 
 const Navbar = () => {
+  const { cartItems } = useContext(CartContext);
   const activeHome = {
     borderBottom:
       "var(--active-link-border-bottom) solid var(--color-theme-homePage)",
@@ -49,7 +52,7 @@ const Navbar = () => {
         <p>the surf company</p>
       </div>
       <div className="cart">
-        <RiShoppingCartLine />
+        {cartItems.length > 0 ? <RiShoppingCartFill /> : <RiShoppingCartLine />}
       </div>
     </nav>
   );
