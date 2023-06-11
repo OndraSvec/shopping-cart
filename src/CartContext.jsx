@@ -34,6 +34,7 @@ const CartContextProvider = ({ children }) => {
       removeCartItem(item);
     }
   };
+  const emptyCart = () => setCartItems([]);
   return (
     <CartContext.Provider
       value={{
@@ -42,6 +43,7 @@ const CartContextProvider = ({ children }) => {
         removeCartItem,
         increaseItemQuantity,
         decreaseItemQuantity,
+        emptyCart,
       }}
     >
       {children}
