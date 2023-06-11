@@ -12,14 +12,16 @@ const CartItem = ({ item }) => {
         <img src={item.images[0]} alt={item.title} />
       </div>
       <div className="cart-item-right">
+        <p className="cart-item-price">Price: ${item.price}</p>
+        <CartItemQuantity item={item} />
         <p className="cart-item-total">
           Item total: ${item.cartQuantity * item.price}
         </p>
-        <CartItemQuantity item={item} />
         <button
           className="cart-item-remove"
           onClick={() => removeCartItem(item)}
         >
+          Discard Item
           <FaTrash />
         </button>
       </div>

@@ -23,6 +23,7 @@
   --card-width: clamp(15rem, 80vw, 25rem);
   --card-height: clamp(20rem, 80vw, 30rem);
   --carousel-card-gap: clamp(1rem, 5vw, 3rem);
+  --cart-item-right-fs: clamp(0.4rem, 5vw, 2rem);
 }
 
 html {
@@ -54,6 +55,13 @@ img {
 
 a {
   text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .navBar {
@@ -290,7 +298,6 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  gap: min(1%, 1rem);
   padding: calc(var(--navbar-logo-fs) * 0.4);
 }
 
@@ -369,7 +376,8 @@ main {
   transition: 0.3s;
 }
 
-.addToCart-btn {
+.addToCart-btn,
+.cart-item-remove {
   padding: var(--navbar-logo-fs);
   width: fit-content;
   font-size: var(--navbar-p);
@@ -417,13 +425,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--navbar-links-gap);
+  gap: var(--carousel-card-gap);
 }
 
 .cart-item {
-  max-width: 70rem;
+  max-width: 60rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: white;
 }
@@ -441,7 +450,49 @@ main {
 }
 
 .cart-item-right {
+  padding: var(--navbar-p);
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: calc(var(--carousel-card-gap) * 0.5);
+  font-size: var(--cart-item-right-fs);
+  white-space: nowrap;
+}
+
+.cartItemQuantity,
+.cartItemQuantity-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.cartItemQuantity {
+  gap: calc(var(--carousel-card-gap) * 0.5);
+}
+
+.cartItemQuantity-buttons {
+  gap: calc(var(--carousel-card-gap) * 0.25);
+}
+
+.cart-total {
+  font-size: var(--cart-item-right-fs);
+  font-weight: 600;
+}
+
+@media screen and (min-width: 600px) {
+  .cart-item {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .cart-item-right {
+    font-size: calc(var(--cart-item-right-fs) * 0.7);
+  }
+  .cart-item-remove {
+    font-size: calc(var(--navbar-p) * 0.7);
+  }
 }
 @media screen and (min-width: 700px) {
   .homePage,

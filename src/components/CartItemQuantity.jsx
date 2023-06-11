@@ -9,19 +9,22 @@ const CartItemQuantity = ({ item }) => {
 
   return (
     <div className="cartItemQuantity">
-      <button
-        className="decreaseQuantity"
-        onClick={() => decreaseItemQuantity(item)}
-      >
-        -
-      </button>
-      <p>{targetItem.cartQuantity}</p>
-      <button
-        className="increaseQuantity"
-        onClick={() => increaseItemQuantity(item)}
-      >
-        +
-      </button>
+      <p>Quantity:</p>
+      <div className="cartItemQuantity-buttons">
+        <button
+          className="decreaseQuantity"
+          onClick={() => decreaseItemQuantity(item)}
+        >
+          -
+        </button>
+        <p>{targetItem.cartQuantity}</p>
+        <button
+          className="increaseQuantity"
+          onClick={() => increaseItemQuantity(item)}
+        >
+          +
+        </button>
+      </div>
     </div>
   );
 };

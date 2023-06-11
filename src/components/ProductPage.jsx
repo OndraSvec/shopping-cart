@@ -14,7 +14,6 @@ export async function loader() {
 
 const ProductPage = () => {
   const products = useLoaderData();
-  console.log(products);
 
   const productElements = products
     .sort((a, b) => b.price - a.price)
