@@ -15,6 +15,7 @@ export async function loader({ params }) {
 const ProductDetail = () => {
   const product = useLoaderData();
   const { cartItems, addCartItem } = useContext(CartContext);
+  const alreadyInCart = cartItems.find((item) => item.id === product.id);
   return (
     <div className="productDetail">
       <LeftPage>
@@ -35,9 +36,9 @@ const ProductDetail = () => {
         <button
           className="addToCart-btn"
           onClick={() => addCartItem(product)}
-          disabled={cartItems.find((item) => item.id === product.id)}
+          disabled={alreadyInCart}
         >
-          Add to cart
+          {alreadyInCart ? "Already in cart" : "Add to cart"}
         </button>
       </RightPage>
     </div>
