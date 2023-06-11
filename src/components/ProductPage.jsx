@@ -1,5 +1,4 @@
 import { useLoaderData, Link } from "react-router-dom";
-import { BsArrowUpRight } from "react-icons/bs";
 import fetchProducts from "../utils/api";
 import Card from "./Card";
 import Carousel from "./Carousel";
@@ -28,9 +27,7 @@ const ProductPage = () => {
           <img src={item.images[0]} alt={item.title} loading="lazy" />
         </div>
         <div className="item-actions">
-          <Link to={`/products/${item.id}`}>
-            Details <BsArrowUpRight />
-          </Link>
+          <Link to={`/products/${item.id}`}>Get Details</Link>
         </div>
       </Card>
     ));

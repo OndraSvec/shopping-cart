@@ -287,13 +287,14 @@ main {
 }
 
 .item-actions > a {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--navbar-links-fs) * 0.2);
+  padding: calc(var(--navbar-logo-fs) * 0.75);
   width: fit-content;
+  font-size: var(--navbar-p);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: calc(var(--navbar-p) * 0.2);
   background-color: black;
   color: white;
-  font-size: var(--navbar-links-fs);
+  white-space: nowrap;
   cursor: pointer;
   margin-bottom: min(10%, 0.4rem);
 }
