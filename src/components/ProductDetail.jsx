@@ -3,8 +3,7 @@ import { fetchProduct } from "../utils/api";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
-import { useContext } from "react";
-import { CartContext } from "../CartContext";
+import AddToCartBtn from "./AddToCartBtn";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ params }) {
@@ -14,8 +13,6 @@ export async function loader({ params }) {
 
 const ProductDetail = () => {
   const product = useLoaderData();
-  const { cartItems, addCartItem } = useContext(CartContext);
-  const alreadyInCart = cartItems.find((item) => item.id === product.id);
   return (
     <div className="productDetail">
       <LeftPage>
@@ -33,13 +30,7 @@ const ProductDetail = () => {
           <img src={product.images[1]} alt={product.title} />
           <img src={product.images[2]} alt={product.title} />
         </div>
-        <button
-          className="addToCart-btn"
-          onClick={() => addCartItem(product)}
-          disabled={alreadyInCart}
-        >
-          {alreadyInCart ? "Already in cart" : "Add to cart"}
-        </button>
+        <AddToCartBtn product={product} />
       </RightPage>
     </div>
   );
