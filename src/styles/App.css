@@ -209,7 +209,9 @@ main {
 }
 
 .productPage > .leftPage,
-.productPage > .rightPage {
+.productPage > .rightPage,
+.cartPage > .leftPage,
+.cartPage > .rightPage {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -375,6 +377,30 @@ main {
   opacity: 0.3;
 }
 
+.cartPage {
+  flex-grow: 1;
+  position: relative;
+}
+
+.cartPage > .rightPage {
+  background-color: var(--color-theme-cartPage);
+  z-index: -10;
+}
+
+.cartPage > .leftPage {
+  background-color: transparent;
+}
+
+.cartPage .emptyBox {
+  background-color: white;
+}
+
+.cart-empty {
+  margin-top: min(20%, 2.5rem);
+  color: white;
+  text-align: center;
+  font-size: var(--homepage-left-text-fs-big);
+}
 @media screen and (min-width: 700px) {
   .homePage,
   .productDetail {
