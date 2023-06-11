@@ -15,7 +15,7 @@ const CartPage = () => {
       <LeftPage />
       <RightPage />
       {cartItems.length > 0 ? (
-        cartElements
+        <div className="cart-items">{cartElements}</div>
       ) : (
         <h2 className="cart-empty">Your cart is empty.</h2>
       )}

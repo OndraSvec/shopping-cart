@@ -48,6 +48,10 @@ body {
   flex-direction: column;
 }
 
+img {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
@@ -400,6 +404,38 @@ main {
   color: white;
   text-align: center;
   font-size: var(--homepage-left-text-fs-big);
+}
+
+.cart-items {
+  margin: min(15%, 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--navbar-links-gap);
+}
+
+.cart-item {
+  max-width: 70rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.cart-item-left {
+  padding: min(1%, 0.5rem);
+  max-width: 20rem;
+}
+
+.cart-item-left > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cart-item-right {
+  flex-grow: 1;
 }
 @media screen and (min-width: 700px) {
   .homePage,
