@@ -1,4 +1,5 @@
 import "./styles/App.css";
+import { CartContextProvider } from "./CartContext";
 import {
   RouterProvider,
   createBrowserRouter,
@@ -34,6 +35,10 @@ const router = createBrowserRouter(
   )
 );
 
-const App = () => <RouterProvider router={router} />;
+const App = () => (
+  <CartContextProvider>
+    <RouterProvider router={router} />;
+  </CartContextProvider>
+);
 
 export default App;
