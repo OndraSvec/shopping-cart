@@ -37,7 +37,7 @@ const router = createBrowserRouter(
 
 const App = () => (
   <CartContextProvider>
-    <RouterProvider router={router} />;
+    <RouterProvider router={router} />
   </CartContextProvider>
 );
 
