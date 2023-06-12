@@ -15,6 +15,7 @@ import ProductDetail, {
   loader as productDetailLoader,
 } from "./components/ProductDetail";
 import CartPage from "./components/CartPage";
+import Error from "./components/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,11 +25,13 @@ const router = createBrowserRouter(
         path="products"
         element={<ProductPage />}
         loader={productPageLoader}
+        errorElement={<Error />}
       />
       <Route
         path="products/:id"
         element={<ProductDetail />}
         loader={productDetailLoader}
+        errorElement={<Error />}
       />
       <Route path="cart" element={<CartPage />} />
     </Route>

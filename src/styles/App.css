@@ -24,6 +24,7 @@
   --card-height: clamp(20rem, 80vw, 30rem);
   --carousel-card-gap: clamp(1rem, 5vw, 3rem);
   --cart-item-right-fs: clamp(0.4rem, 5vw, 2rem);
+  --color-theme-error: #e11d48;
 }
 
 html {
@@ -479,6 +480,13 @@ main {
 .cart-total {
   font-size: var(--cart-item-right-fs);
   font-weight: 600;
+}
+
+.error {
+  font-size: var(--homepage-left-text-fs-big);
+  text-align: center;
+  margin-top: min(15%, 3rem);
+  color: var(--color-theme-error);
 }
 
 @media screen and (min-width: 600px) {
