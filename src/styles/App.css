@@ -482,7 +482,8 @@ main {
   font-weight: 600;
 }
 
-.error {
+.error,
+.notFound {
   font-size: var(--homepage-left-text-fs-big);
   text-align: center;
   margin-top: min(15%, 3rem);

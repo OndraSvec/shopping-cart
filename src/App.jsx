@@ -16,6 +16,7 @@ import ProductDetail, {
 } from "./components/ProductDetail";
 import CartPage from "./components/CartPage";
 import Error from "./components/Error";
+import NotFound from "./components/NotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
         errorElement={<Error />}
       />
       <Route path="cart" element={<CartPage />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
