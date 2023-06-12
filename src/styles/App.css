@@ -476,6 +476,10 @@ main {
 .cartItemQuantity-buttons {
   gap: calc(var(--carousel-card-gap) * 0.25);
 }
+.increaseQuantity,
+.decreaseQuantity {
+  color: black;
+}
 
 .cart-total {
   font-size: var(--cart-item-right-fs);
