@@ -1,6 +1,5 @@
 import { describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { UserEvent } from "./test-utils";
 import CartPage from "../components/CartPage";
 import { CartContext } from "../CartContext";
 import { fetchProduct } from "../utils/api";
